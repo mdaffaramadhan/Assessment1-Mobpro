@@ -55,8 +55,14 @@ fun HomeScreen(
                         elevation = CardDefaults.cardElevation(4.dp)
                     ) {
                         Column(modifier = Modifier.padding(16.dp)) {
-                            Text(text = note.title, style = MaterialTheme.typography.titleMedium)
-                            Text(text = note.content, style = MaterialTheme.typography.bodyMedium)
+                            Text(
+                                text = note.title.take(20) + if (note.title.length > 20) "... " else "",
+                                style = MaterialTheme.typography.titleMedium
+                            )
+                            Text(
+                                text = note.content.take(50) + if (note.content.length > 50) "... " else "",
+                                style = MaterialTheme.typography.bodyMedium
+                            )
                         }
                     }
                 }
@@ -64,4 +70,3 @@ fun HomeScreen(
         }
     }
 }
-
