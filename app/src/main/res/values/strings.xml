@@ -9,4 +9,5 @@
     <string name="share_note">Share Note</string>
     <string name="back">Back</string>
     <string name="note_not_found">Note not found</string>
+    <string name="logo_app">App Logo</string>
 </resources>
