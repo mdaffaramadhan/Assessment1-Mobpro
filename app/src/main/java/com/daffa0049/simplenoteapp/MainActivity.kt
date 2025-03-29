@@ -1,47 +1,23 @@
-package com.daffa0049.simplenoteapp
+package com.daffa0049.simplenoteapp2
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.daffa0049.simplenoteapp.ui.theme.SimpleNoteAppTheme
+import androidx.compose.runtime.*
+import com.daffa0049.simplenoteapp2.ui.HomeScreen
+import com.daffa0049.simplenoteapp2.viewmodel.NoteViewModel
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContent {
-            SimpleNoteAppTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
+            val noteViewModel = remember { NoteViewModel() }
+            HomeScreen(
+                noteViewModel = noteViewModel,
+                onAddNoteClick = {
+                    noteViewModel.addNote("Judul Baru", "Isi Catatan")
                 }
-            }
+            )
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
-
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    SimpleNoteAppTheme {
-        Greeting("Android")
     }
 }

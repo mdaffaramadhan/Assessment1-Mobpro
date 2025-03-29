@@ -3,6 +3,7 @@ activityComposeVersion = "1.7.2"
 agp = "8.8.0"
 androidxComposeBom = "2023.10.01"
 androidxJunit = "1.1.5"
+compiler = "1.5.15"
 composeBomVersion = "2025.03.01"
 coreKtxVersion = "1.12.0"
 datastoreCore = "1.1.4"
@@ -20,6 +21,7 @@ navigationCompose = "2.8.9"
 
 [libraries]
 androidx-activity-compose-v172 = { module = "androidx.activity:activity-compose", version.ref = "activityComposeVersion" }
+androidx-compiler = { module = "androidx.compose.compiler:compiler", version.ref = "compiler" }
 androidx-compose-bom-v20250301 = { module = "androidx.compose:compose-bom", version.ref = "composeBomVersion" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-core-ktx-v1120 = { module = "androidx.core:core-ktx", version.ref = "coreKtxVersion" }
