@@ -7,6 +7,7 @@ import androidx.compose.runtime.*
 import androidx.navigation.compose.*
 import com.daffa0049.simplenoteapp2.ui.HomeScreen
 import com.daffa0049.simplenoteapp2.ui.screens.AddNoteScreen
+import com.daffa0049.simplenoteapp2.ui.screens.NoteDetailScreen
 import com.daffa0049.simplenoteapp2.viewmodel.NoteViewModel
 
 class MainActivity : ComponentActivity() {
@@ -35,6 +36,10 @@ fun NoteApp(noteViewModel: NoteViewModel) {
                 navController = navController,
                 noteViewModel = noteViewModel
             )
+        }
+        composable("note_detail/{noteId}") { backStackEntry ->
+            val noteId = backStackEntry.arguments?.getString("noteId") ?: ""
+            NoteDetailScreen(navController, noteViewModel, noteId)
         }
     }
 }

@@ -58,8 +58,8 @@ fun AddNoteScreen(
             Button(
                 onClick = {
                     if (title.isNotEmpty() && content.isNotEmpty()) {
-                        noteViewModel.addNote(title, content) // Simpan catatan ke ViewModel
-                        navController.popBackStack() // Kembali ke HomeScreen
+                        noteViewModel.addNote(title, content)
+                        navController.popBackStack()
                     }
                 },
                 modifier = Modifier.fillMaxWidth()

@@ -1,6 +1,5 @@
 package com.daffa0049.simplenoteapp2.viewmodel
 
-import androidx.compose.runtime.mutableStateListOf
 import androidx.lifecycle.ViewModel
 import com.daffa0049.simplenoteapp2.model.Note
 import kotlinx.coroutines.flow.MutableStateFlow
