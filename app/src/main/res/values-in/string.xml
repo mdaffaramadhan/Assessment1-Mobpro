@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Aplikasi Catatan Sederhana</string>
+    <string name="add_note">Tambah Catatan</string>
+    <string name="home_title">Aplikasi Catatan Sederhana</string>
+    <string name="note_title">Judul</string>
+    <string name="note_content">Isi Catatan</string>
+    <string name="save_note">Simpan</string>
+    <string name="detail_title">Detail Catatan</string>
+    <string name="share_note">Bagikan Catatan</string>
+    <string name="back">Kembali</string>
+    <string name="note_not_found">Catatan tidak ditemukan</string>
+</resources>

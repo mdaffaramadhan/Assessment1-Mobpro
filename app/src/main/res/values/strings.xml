@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">SimpleNoteApp</string>
+    <string name="app_name">Simple Note App</string>
+    <string name="add_note">Add Note</string>
+    <string name="home_title">Simple Note App</string>
+    <string name="note_title">Title</string>
+    <string name="note_content">Content</string>
+    <string name="save_note">Save</string>
+    <string name="detail_title">Note Details</string>
+    <string name="share_note">Share Note</string>
+    <string name="back">Back</string>
+    <string name="note_not_found">Note not found</string>
 </resources>
