@@ -13,9 +13,8 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            val noteViewModel = remember { NoteViewModel() } // ViewModel tetap ada selama aktivitas berjalan
-
-            NoteApp(noteViewModel) // ✅ Memanggil NoteApp dengan ViewModel
+            val noteViewModel = remember { NoteViewModel() }
+            NoteApp(noteViewModel)
         }
     }
 }
@@ -28,14 +27,14 @@ fun NoteApp(noteViewModel: NoteViewModel) {
         composable("home") {
             HomeScreen(
                 navController = navController,
-                noteViewModel = noteViewModel,
-                onAddNoteClick = {
-                    navController.navigate("add_note")
-                }
+                noteViewModel = noteViewModel
             )
         }
         composable("add_note") {
-            AddNoteScreen(navController)
+            AddNoteScreen(
+                navController = navController,
+                noteViewModel = noteViewModel
+            )
         }
     }
 }

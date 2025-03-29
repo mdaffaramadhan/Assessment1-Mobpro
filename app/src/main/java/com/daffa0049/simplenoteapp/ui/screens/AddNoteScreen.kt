@@ -6,16 +6,29 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowBack
+import com.daffa0049.simplenoteapp2.viewmodel.NoteViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun AddNoteScreen(navController: NavController) {
+fun AddNoteScreen(
+    navController: NavController,
+    noteViewModel: NoteViewModel
+) {
     var title by remember { mutableStateOf("") }
     var content by remember { mutableStateOf("") }
 
     Scaffold(
         topBar = {
-            TopAppBar(title = { Text("Tambah Catatan") })
+            TopAppBar(
+                title = { Text("Tambah Catatan") },
+                navigationIcon = {
+                    IconButton(onClick = { navController.popBackStack() }) {
+                        Icon(Icons.Default.ArrowBack, contentDescription = "Back")
+                    }
+                }
+            )
         }
     ) { padding ->
         Column(
@@ -44,8 +57,10 @@ fun AddNoteScreen(navController: NavController) {
 
             Button(
                 onClick = {
-                    // Nanti tambahkan fungsi simpan catatan
-                    navController.popBackStack() // Kembali ke Home
+                    if (title.isNotEmpty() && content.isNotEmpty()) {
+                        noteViewModel.addNote(title, content) // Simpan catatan ke ViewModel
+                        navController.popBackStack() // Kembali ke HomeScreen
+                    }
                 },
                 modifier = Modifier.fillMaxWidth()
             ) {
@@ -54,3 +69,4 @@ fun AddNoteScreen(navController: NavController) {
         }
     }
 }
+
